@@ -2,6 +2,8 @@
 #include <Wire.h>
 #include <String>
 #include "TemperatureStub.h"
+#include <WiFiManager.h>
+#include "myFunctions.cpp" //fonctions utilitaires (get_random_string)
  
 // Définition des LEDs
 #define GPIO_PIN_LED_LOCK_ROUGE 12 // Led Rouge GPIO12
@@ -20,7 +22,7 @@ TemperatureStub *temperatureStub = NULL;
  
 void setup() {
   Serial.begin(9600);
- 
+  
   // Initialisation des LEDs
   pinMode(GPIO_PIN_LED_LOCK_ROUGE, OUTPUT);
   pinMode(GPIO_PIN_LED_OK_VERT, OUTPUT);
@@ -70,3 +72,4 @@ void loop() {
     }
   }
 }
+
