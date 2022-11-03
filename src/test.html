@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>SAC</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+     <div class="contenant">
+        <div class="grid-container">
+            <div class="un">
+                <img class="fit-picture" src="img/sac.png"></img>
+                <h2>Type de bois</h2>
+                <select name="typeBois" id="typeBois">
+                    <option value="erable">Erable</option>
+                    <option value="bouleau">Bouleau</option>
+                    <option value="sapin">Sapin</option>
+                    <option value="chene">Chêne</option>
+                </select>
+            </div>
+            <div class="deux"style="border:3px;">
+                <h2>Caractéristiques</h2>
+                <span>
+                    <p>Bois :</p>
+                    <input type="text" readonly>
+                </span> 
+                <span>
+                    <p>Type :</p>
+                    <input type="text" readonly>
+                </span>
+                <span>
+                    <p>Origine :</p>
+                    <input type="text" readonly>
+                </span>
+                <span>
+                    <p>Temps de séchage : </p>
+                    <input type="text" readonly>
+                </span>
+                <span>
+                    <p>Température min : </p>
+                    <input type="text" readonly>
+                </span>
+            </div>
+            <div class="trois">
+                <h2>Contrôle du four de séchage</h2>
+                <div>
+                    <p>Température du four : </p>
+                    <input type="text" id="temperature" name="temperature" readonly>
+                </div>
+                <button class="demarrer" type="button">Démarrage du four</button>
+                <div class="info">
+                    <span>
+                        <input type="text" class='retourDonnees' id="bois" name="bois" readonly>
+                    </span>
+                    <span>
+                        <input type="int" class='retourDonnees' id="tempRestant" name="tempRestant" readonly>
+                    </span> 
+                    <span>
+                        <input type="int" class='retourDonnees' id="tempsSechage" name="tempsSechage" readonly>
+                    </span> 
+                    <span>
+                        <input type="int" class='retourDonnees' id="tempMin" name="tempMin" readonly>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="column">
+            <img class="fit-picture" src="img/sac.png"></img>
+            <h2>Type de bois</h2>
+            <select name="typeBois" id="typeBois">
+                <option value="erable">Erable</option>
+                <option value="bouleau">Bouleau</option>
+                <option value="sapin">Sapin</option>
+                <option value="chene">Chêne</option>
+            </select>
+            <div class="box">
+                <h2>Caractéristiques</h2>
+                <span>
+                    <p>Bois :</p>
+                    <input type="text" readonly>
+                </span> 
+                <span>
+                    <p>Type :</p>
+                    <input type="text" readonly>
+                </span>
+                <span>
+                    <p>Origine :</p>
+                    <input type="text" readonly>
+                </span>
+                <span>
+                    <p>Temps de séchage : </p>
+                    <input type="text" readonly>
+                </span>
+                <span>
+                    <p>Température min : </p>
+                    <input type="text" readonly>
+                </span>
+            </div>
+        </div>
+        <div class="column">
+            <div class="box">
+                <h2>Contrôle du four de séchage</h2>
+                <div>
+                    <p>Température du four : </p>
+                    <input type="text" id="temperature" name="temperature" readonly>
+                </div>
+                <button class="demarrer" type="button">Démarrage du four</button>
+                <div class="info">
+                    <span>
+                        <input type="text" id="bois" name="bois" readonly>
+                    </span>
+                    <span>
+                        <input type="int" id="tempRestant" name="tempRestant" readonly>
+                    </span> 
+                    <span>
+                        <input type="int" id="tempsSechage" name="tempsSechage" readonly>
+                    </span> 
+                    <span>
+                        <input type="int" id="tempMin" name="tempMin" readonly>
+                    </span>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</body>
+</html>
