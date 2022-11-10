@@ -38,8 +38,8 @@ MyButton *myButtonReset = NULL;
 #define DHTTYPE DHT22  //Le type de senseur utilisé
 TemperatureStub *temperatureStub = NULL;
 
-// std::string CallBackMessageListener(string message) {
-//   while(replaceAll(message, std::string("  "), std::string(" ")));
+std::string CallBackMessageListener(string message) {
+   while(replaceAll(message, std::string("  "), std::string(" ")));
 //   //Décortiquer le message
 //   string actionToDo = getValue(message, ' ', 0);
 //   string arg1 = getValue(message, ' ', 1);
@@ -61,7 +61,7 @@ TemperatureStub *temperatureStub = NULL;
 //   }
 //   std::string result = "";
 //   return result;
-// }
+ }
 
 void setup() {
   Serial.begin(9600);
@@ -90,6 +90,7 @@ void setup() {
   // ----------- Routes du serveur ----------------
   myServer = new MyServer(80);
   myServer -> initAllRoutes();
+  myServer->initCallback(&CallBackMessageListener);
 
   // Initialisation des LEDs
   pinMode(GPIO_PIN_LED_LOCK_ROUGE, OUTPUT);
@@ -139,4 +140,3 @@ void loop() {
   //   }
   // }
 }
-
