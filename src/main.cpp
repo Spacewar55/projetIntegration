@@ -38,20 +38,23 @@ MyButton *myButtonReset = NULL;
 #define DHTTYPE DHT22  //Le type de senseur utilisé
 TemperatureStub *temperatureStub = NULL;
 
+float tempDuFour = 20;
+char buffer[100];
+
 std::string CallBackMessageListener(string message) {
    while(replaceAll(message, std::string("  "), std::string(" ")));
-//   //Décortiquer le message
-//   string actionToDo = getValue(message, ' ', 0);
-//   string arg1 = getValue(message, ' ', 1);
-//   string arg2 = getValue(message, ' ', 2);
-//   string arg3 = getValue(message, ' ', 3);
-//   string arg4 = getValue(message, ' ', 4);
-//   string arg5 = getValue(message, ' ', 5);
-//   string arg6 = getValue(message, ' ', 6);
-//   string arg7 = getValue(message, ' ', 7);
-//   string arg8 = getValue(message, ' ', 8);
-//   string arg9 = getValue(message, ' ', 9);
-//   string arg10 = getValue(message, ' ', 10);
+  //Décortiquer le message
+  string actionToDo = getValue(message, ' ', 0);
+  string arg1 = getValue(message, ' ', 1);
+  string arg2 = getValue(message, ' ', 2);
+  string arg3 = getValue(message, ' ', 3);
+  string arg4 = getValue(message, ' ', 4);
+  string arg5 = getValue(message, ' ', 5);
+  string arg6 = getValue(message, ' ', 6);
+  string arg7 = getValue(message, ' ', 7);
+  string arg8 = getValue(message, ' ', 8);
+  string arg9 = getValue(message, ' ', 9);
+  string arg10 = getValue(message, ' ', 10);
 
 //   if (string(actionToDo.c_str()).compare(string("button")) == 0) {
 //     if(string(arg1.c_str()).compare(string("getTemp")) == 0) {
@@ -61,6 +64,15 @@ std::string CallBackMessageListener(string message) {
 //   }
 //   std::string result = "";
 //   return result;
+    // std::string nomDuFour = "Four9394";
+    // if (string(actionToDo.c_str()).compare(string("askNomFour")) == 0) {
+    // return(nomDuFour.c_str()); }
+    
+    if (string(actionToDo.c_str()).compare(string("askTempFour")) == 0) {
+        sprintf(buffer, "%4.1f C", tempDuFour);
+        return(buffer);
+    }
+    return "";
  }
 
 void setup() {
@@ -112,11 +124,11 @@ void setup() {
 }
  
 void loop() {
-  float t = temperatureStub->getTemperature();
+  tempDuFour = temperatureStub->getTemperature();
   int i;
 
   Serial.print("Température : ");
-  Serial.println(t);
+  Serial.println(tempDuFour);
   delay(2000);
  
   //Gestion du bouton Action

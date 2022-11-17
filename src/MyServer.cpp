@@ -41,26 +41,20 @@ void MyServer::initAllRoutes() {
         if (ptrToCallBackFunction) (*ptrToCallBackFunction)("test "); 
     });
 
-    this->on("/getNomEsp", HTTP_GET, [](AsyncWebServerRequest *request) {
+    // this->on("/getNomEsp", HTTP_GET, [](AsyncWebServerRequest *request) {
+    //     std::string repString = "";
+    //     if (ptrToCallBackFunction) repString = (*ptrToCallBackFunction)("askNomFour");
+    //     String lireNomDuFour =String(repString.c_str());
+    //     request->send(200, "text/plain", lireNomDuFour );
+    // });
+
+//mettre dans un intervalle pour la temperature
+    this->on("/lireTemp", HTTP_GET, [](AsyncWebServerRequest *request) {
         std::string repString = "";
-        if (ptrToCallBackFunction) repString = (*ptrToCallBackFunction)("askNomFour");
-        String lireNomDuFour =String(repString.c_str());
-        request->send(200, "text/plain", lireNomDuFour );
+        if (ptrToCallBackFunction) repString = (*ptrToCallBackFunction)("askTempFour");
+        String lireTempDuFour =String(repString.c_str());
+        request->send(200, "text/plain", lireTempDuFour );
     });
-
-    // this->on("/getCouleurEsp", HTTP_GET, [](AsyncWebServerRequest *request) {
-    //     std::string repString = "";
-    //     if (ptrToCallBackFunction) repString = (*ptrToCallBackFunction)("askCouleurFour");
-    //     String lireCouleurBackgroundFour =String(repString.c_str());
-    //     request->send(200, "text/plain", lireCouleurBackgroundFour );
-    // });
-
-    // this->on("/lireTemp", HTTP_GET, [](AsyncWebServerRequest *request) {
-    //     std::string repString = "";
-    //     if (ptrToCallBackFunction) repString = (*ptrToCallBackFunction)("askTempFour");
-    //     String lireTempDuFour =String(repString.c_str());
-    //     request->send(200, "text/plain", lireTempDuFour );
-    // });
 
    //route si celle tapé n'existe pas
     this->onNotFound([](AsyncWebServerRequest *request){

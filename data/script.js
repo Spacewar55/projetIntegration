@@ -9,17 +9,6 @@ function getFromESP_getNom () {
     xhttp.send();
 }
 
-function getFromESP_getBackgroundColor () {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("couleur").innerHTML = this.responseText;
-        }
-    };
-    xhttp.open("GET", "getCouleurEsp", true);
-    xhttp.send();
-}
-
 setInterval(
     function getTempSysteme(){
         var xhttp = new XMLHttpRequest();
@@ -30,5 +19,5 @@ setInterval(
         };
         xhttp.open("GET", "lireTemp", true);
         xhttp.send();
-    }, 5000
-);
+    }
+, 5000);
