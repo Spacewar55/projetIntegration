@@ -9,58 +9,58 @@
 <body>
     <div class="contenant">
         <div class="column">
-            <!-- <img class="fit-picture" src="sac.png"></img> -->
-            <h2>Type de bois</h2>
+            <img class="fit-picture" src="sac.png"></img>
+            <h2 align='left'>Type de bois</h2>
             <select name="typeBois" id="typeBois" class="choix">
                 <option value="erable">Erable</option>
                 <option value="bouleau">Bouleau</option>
                 <option value="sapin">Sapin</option>
                 <option value="chene">Chêne</option>
             </select>
+            <h2 align='left'>Caractéristiques</h2>
             <div class="box">
-                <h2>Caractéristiques</h2>
                 <span>
                     <p>Bois :</p>
-                    <input type="text" readonly>
+                    <p type="text">Erable</p>
                 </span> 
                 <span>
                     <p>Type :</p>
-                    <input type="text" readonly>
+                    <p type="text">dur</p>
                 </span>
                 <span>
                     <p>Origine :</p>
-                    <input type="text" readonly>
+                    <p type="text">US</p>
                 </span>
                 <span>
                     <p>Temps de séchage : </p>
-                    <input type="text" readonly>
+                    <p type="text">20s</p>
                 </span>
                 <span>
                     <p>Température min : </p>
-                    <input type="text" readonly>
+                    <p type="text">25°C</p>
                 </span>
             </div>
         </div>
         <div class="column">
+            <h2 align='left'>Contrôle du four de séchage</h2>
             <div class="box">
-                <h2 align='left'>Contrôle du four de séchage</h2>
                 <div>
-                    <p><strong>Température du four : </strong></p>
+                    <p style="margin-top: 3em"><strong>Température du four : </strong></p>
                     <p class='temperatureFour' id="temp" name="temperature"></p>
                 </div>
                 <button class="demarrer" type="button">Démarrage du four</button>
                 <div class="info">
                     <span>
-                        <input type="text" class='retourDonnees' id="bois" name="bois" readonly>
+                        <p type="text" class='retourDonnees' id="bois" name="bois">Erable</p>
                     </span>
                     <span>
-                        <input type="int" class='retourDonnees' id="tempRestant" name="tempRestant" readonly>
+                        <p type="int" class='retourDonnees' id="tempRestant" name="tempRestant">0s</p>
                     </span> 
                     <span>
-                        <input type="int" class='retourDonnees' id="tempsSechage" name="tempsSechage" readonly>
+                        <p type="int" class='retourDonnees' id="tempsSechage" name="tempsSechage">20s</p>
                     </span> 
                     <span>
-                        <input type="int" class='retourDonnees' id="tempMin" name="tempMin" readonly>
+                        <p type="int" class='retourDonnees' id="tempMin" name="tempMin">25°C</p>
                     </span>
                 </div>
             </div>
@@ -99,6 +99,12 @@ body{
     display: flex;
     justify-content: space-between;
     height: 2em;
+    margin-right: 2em;
+}
+.box .info span{
+    display: flex;
+    justify-content: space-between;
+    height: 2em;
 }
 
 .column{
@@ -106,10 +112,14 @@ body{
     flex-direction: column;
     text-align: center;
     gap: 1em;
+    width: 500px;
+    height: 60%;
 }
 
 .column select{
     background-color: #F7C59F;
+    width: 90%;
+    margin-left: 5%;
 }
 
 button{
@@ -123,16 +133,17 @@ button{
 
 .info{
     display: flex;
+    justify-content: space-between;
 }
 
-.column:nth-child(2){
+/*.column:nth-child(2){
     height: 100%;
-}
+}*//* 58.7%*/
 
 .demarrer{
     width: 50%;
     margin: 0 auto;
-    border-radius: 20%;
+    border-radius: 30px;
 }
 /* .retourDonnees, */
 .temperatureFour{
